@@ -8,7 +8,7 @@
 
     <div class="card col-6 offset-3 show-card listing-card">
       <img
-        src="<%= listing.image %>"
+        src="<%= listing.image.url %>"
         class="card-img-top show-img"
         alt="listing_image"
       />
@@ -50,14 +50,52 @@
       >
         <div class="mt-3 mb-3">
           <label for="rating" class="form-label">Rating</label>
-          <input
-            type="range"
-            min="1"
-            max="5"
-            id="rating"
-            name="review[rating]"
-            class="form-range"
-          />
+          <fieldset class="starability-coinFlip">
+            <input
+              type="radio"
+              id="no-rate"
+              class="input-no-rate"
+              name="review[rating]"
+              value="1"
+              checked
+              aria-label="No rating."
+            />
+            <input
+              type="radio"
+              id="second-rate1"
+              name="review[rating]"
+              value="1"
+            />
+            <label for="second-rate1" title="Terrible">1 star</label>
+            <input
+              type="radio"
+              id="second-rate2"
+              name="review[rating]"
+              value="2"
+            />
+            <label for="second-rate2" title="Not good">2 stars</label>
+            <input
+              type="radio"
+              id="second-rate3"
+              name="review[rating]"
+              value="3"
+            />
+            <label for="second-rate3" title="Average">3 stars</label>
+            <input
+              type="radio"
+              id="second-rate4"
+              name="review[rating]"
+              value="4"
+            />
+            <label for="second-rate4" title="Very good">4 stars</label>
+            <input
+              type="radio"
+              id="second-rate5"
+              name="review[rating]"
+              value="5"
+            />
+            <label for="second-rate5" title="Amazing">5 stars</label>
+          </fieldset>
         </div>
         <div class="mb-3">
           <label for="comment" class="form-label">Comments</label>
@@ -83,16 +121,19 @@
         <div class="card col-5 ms-3 mb-3">
           <div class="card-body">
             <h5 class="card-title">@<%= review.author.username %></h5>
+            <p
+              class="starability-result card-text"
+              data-rating="<%= review.rating %>"
+            ></p>
             <p class="card-text"><%= review.comment %></p>
-            <p class="card-text">Rating: <%= review.rating %> Stars</p>
+            <form
+              method="POST"
+              action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
+              class="mb-3"
+            >
+              <button class="btn btn-sm btn-dark mt-3">Delete</button>
+            </form>
           </div>
-          <form
-            method="POST"
-            action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
-            class="mb-3"
-          >
-            <button class="btn btn-sm btn-dark mt-3">Delete</button>
-          </form>
         </div>
         <% } %>
       </div>

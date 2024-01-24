@@ -23,6 +23,27 @@ body {
   color: #222222 !important;
 }
 
+.nav-link:hover {
+  color: #fe424d !important;
+}
+
+.btn-search {
+  background-color: #fe424d !important;
+  color: white !important;
+  border-radius: 100% !important;
+}
+.btn-search:hover {
+  background-color: white !important;
+  color: #fe424d !important;
+  border: 1px solid #fe424d !important;
+  font-weight: 400 !important;
+}
+.search-input {
+  border: 1px solid #fe424d !important;
+  border-radius: 1rem !important;
+  padding: 0rem 3rem 0rem 3rem !important;
+  font-size: 0.8rem !important;
+}
 /* footer */
 
 .f-info-links a {
@@ -45,7 +66,7 @@ body {
 
 .f-info-socials i {
   margin-right: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .f-info {
@@ -114,4 +135,96 @@ body {
 .show-card {
   padding-left: 0;
   padding-right: 0;
+}
+
+/* #filters {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter {
+    text-align: center;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  .filter:hover {
+    color: #fe424d;
+  }
+  .filter p {
+    font-size: 0.8rem;
+  }
+  .tax-info {
+    display: none;
+  }
+  .tax-toggle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    margin-left: 2.6rem;
+  } */
+#filters {
+  margin-top: 1rem !important;
+  margin-bottom: 1.5rem !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  /* justify-content: center; */
+  align-items: center !important;
+}
+.filter {
+  text-align: center !important;
+  margin-right: 1rem !important;
+  cursor: pointer !important;
+  height: 3rem !important; /* Set a fixed height for each filter */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+.filter:hover {
+  color: #fe424d !important;
+}
+.filter p {
+  font-size: 0.8rem !important;
+  margin: 0 !important; /* Remove default margin for paragraphs */
+}
+.tax-info {
+  display: none;
+}
+.tax-toggle {
+  border: 1px solid black !important;
+  border-radius: 1rem !important;
+  height: 2.5rem !important;
+  padding: 0.5rem !important;
+  margin-left: 3.6rem;
+  /* margin-top: 1rem */
+}
+/* .tax-toggle:hover {
+    border: 2px solid #fe424d;
+  } */
+@media screen and (max-width: 768px) {
+  #filters {
+    justify-content: flex-start !important;
+    margin-right: 1rem !important;
+  }
+}
+/* .edit-image {
+  display: flex;
+  border-radius: 1rem;
+  border: #fe424d 2px solid;
+  width: 15rem;
+  height: 12rem;
+} */
+
+.github {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.github-only {
+  color: #fe424d;
+}
+
+.github:hover {
+  color: #fe424d;
 }

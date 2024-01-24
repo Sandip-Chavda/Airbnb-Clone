@@ -51,9 +51,9 @@ const sessionOption = {
 };
 
 //Home Route
-app.get("/", (req, res) => {
-  res.send("This Home/Root Page.");
-});
+// app.get("/", (req, res) => {
+//   res.send("This Home/Root Page.");
+// });
 
 //session
 app.use(session(sessionOption));
